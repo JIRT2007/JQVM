@@ -149,17 +149,17 @@ EOF
 	case $optionMAIN_STRUCTURE in
 
 		1) 
-		sudo apt install -y qemu-system-x86 ufw docker.io 
+		sudo apt install -y qemu-system-x86 ufw 
 		CREATE_STRUCTURE
 		;;
 
 		2) 
-		sudo pacman -S --needed --noconfirm qemu-desktop ufw docker 
+		sudo pacman -S --needed --noconfirm qemu-desktop ufw
 		CREATE_STRUCTURE
 		;;
 
 		3) 
-		sudo dnf install -y qemu-system-x86 ufw docker 
+		sudo dnf install -y qemu-system-x86 ufw 
 		CREATE_STRUCTURE
 		;;
 
@@ -264,104 +264,6 @@ EOF
 
 		*)
 		echo "Order your found."
-		sleep 2	
-		;;
-esac
-done
-}
-
-###################
-### Docker Menu ###
-###################
-DOCKER_MENU(){
-while true; do
-	clear
-
-cat << "EOF"
-
- ██████████                     █████
-▒▒███▒▒▒▒███                   ▒▒███
- ▒███   ▒▒███  ██████   ██████  ▒███ █████  ██████  ████████
- ▒███    ▒███ ███▒▒███ ███▒▒███ ▒███▒▒███  ███▒▒███▒▒███▒▒███
- ▒███    ▒███▒███ ▒███▒███ ▒▒▒  ▒██████▒  ▒███████  ▒███ ▒▒▒
- ▒███    ███ ▒███ ▒███▒███  ███ ▒███▒▒███ ▒███▒▒▒   ▒███
- ██████████  ▒▒██████ ▒▒██████  ████ █████▒▒██████  █████
-▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒▒▒   ▒▒▒▒▒▒  ▒▒▒▒ ▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒
-═════════════════════════════════════════════════════════════
-  --- Containers ---
-    [1] Create container.
-    [2] Start container.
-    [3] Stop container.
-    [4] Restart container.
-    [5] Delete container.
-    [6] List containers.
-
-  --- Images ---
-    [7] List images.
-    [8] Pull image.
-    [9] Delete image.
-
-  --- Docker Compose ---
-    [10] Start Compose.
-    [11] Stop Compose.
-
-    [0] Exit.
-═════════════════════════════════════════════════════════════
-EOF
-	read -p "    Enter your order: " optionMAIN_DOCKER
-	case $optionMAIN_DOCKER in
-
-		1)
-			
-		;; 
-	
-		2)
-			
-		;; 
-	
-		3)
-			
-		;; 
-	
-		4)
-			
-		;; 
-	
-		5)
-			
-		;; 
-	
-		6)
-			
-		;; 
-	
-		7)
-			
-		;; 
-	
-		8)
-			
-		;; 
-	
-		9)
-			
-		;; 
-	
-		10)
-			
-		;; 
-	
-		11)
-			
-		;;
-		
-		0)
-		clear
-		return	
-		;;
-
-		*)
-		echo "Order not found." 
 		sleep 2	
 		;;
 esac
@@ -493,10 +395,6 @@ EOF
 
 	4)
 	SSH_MENU	
-	;;
-
-        5)
-	DOCKER_MENU
 	;;
 
         0)
